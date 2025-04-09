@@ -36,8 +36,9 @@
   :root {
     --biggest-font-size: 4rem;
     --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
+    --h2-font-size: 1.8rem;
     --h3-font-size: 1.25rem;
+    --h4-font-size:1rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
@@ -81,6 +82,7 @@ h4 {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
+  text-transform: capitalize;
 }
 
 ul {
@@ -98,8 +100,8 @@ img {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 .logo img {
@@ -120,7 +122,7 @@ img {
 
 .section__title {
   text-align: center;
-  font-size: var(--h1-font-size);
+  font-size: 1.8rem;
   font-family: var(--second-font);
   margin-bottom: 2rem;
 }
@@ -150,28 +152,14 @@ img {
 
 .nav__logo {
   font-family: var(--first-color);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-/* Navigation for mobile devices */
-/* @media screen and (max-width: 1150px) {
-  .nav__menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: var(--container-color);
-    padding: 1.25rem 1rem;
-   
-    box-shadow: 0px -8px 32px hsla(0, 0%, 0%, 0.1);
-    transition: background-color 0.4s;
-  }
-} */
+
 
 .nav__list {
   display: flex;
@@ -406,6 +394,47 @@ img {
   /* Make container full-width */
   padding-inline: 1rem;
 }
+.hire-button {
+  padding: 10px 20px;
+  background-color: hsl(0, 0%, 6%); /* Very dark gray/black */
+  color: white;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Important for width adjustments */
+}
+
+.hire-button:hover {
+  background-color: hsl(0, 0%, 15%);
+}
+
+.hire-button a {
+  text-decoration: none;
+  color: white;
+  display: block; /* Make the anchor fill the button */
+  padding: inherit; /* Inherit padding from the button */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .hire-button {
+    padding: 0.5rem 0.9rem; /* Slightly reduce padding */
+    font-size: 0.8rem; /* Reduce font size */
+     /* Make the button take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+}
+
+@media (max-width: 400px) {
+  .hire-button {
+    font-size: 0.6rem; /* Further reduce font size for very small screens */
+  }
+}
+
+
 
 /*=============== HOME ===============*/
 
@@ -432,7 +461,7 @@ img {
 
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #4F1C51;
+  color: white;
   /* Default text color, adjust as needed */
   z-index: 1;
   /* Ensure the text is above the video */
@@ -449,20 +478,23 @@ img {
   font-size: 3em;
   /* Default for larger screens */
   margin-bottom: 20px;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 600;
   /* Add some space below the heading */
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
   /* Optional: Add a text shadow for better visibility */
 }
 
 /* Style for the paragraph (<p>) */
 .hero-content p {
-  font-size: 1.2em;
+  font-size: 1.4rem;
   /* Default for larger screens */
   line-height: 1.6;
   /* Improve readability */
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   /* Add some space below the paragraph */
-  text-shadow: 1px 1px 2px rgba(36, 36, 36, 0.8);
+ color: white;
   /* Optional: Add a text shadow */
 }
 
@@ -495,6 +527,10 @@ img {
 .about__description {
 	margin-bottom: 1.5rem;
 	font-size: var(--normal-font-size);
+  line-height: 1.6;
+}
+.about__data h4{
+  font-size: var(--h3-font-size);
 }
 
 .about__missions p {
@@ -546,6 +582,9 @@ img {
     
     background-color:#EFF3EA;
   }
+  .service h2{
+    font-size: 1.8rem;
+  }
   
   .service_container {
    
@@ -592,14 +631,14 @@ img {
     text-align: left; /* Default text alignment */
   }
   
-  .service_Body h1 {
-    font-size: 1.5em;
+  .service_Body h4 {
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     color: #333;
   }
   
   .service_Body p {
-    font-size: 1em;
+    font-size: 0.9rem;
     color: #666;
     line-height: 1.6;
   }
@@ -615,6 +654,7 @@ img {
     .service_card {
       flex-direction: column-reverse; /* Stack image and text vertically */
       width: 95%; /* Adjusted to cover approximately 70% of full width */
+      margin: auto 1rem;
     }
   
     .imgservice {
@@ -636,9 +676,9 @@ img {
   }
   @media screen and (max-width:480px){
     .service_card{
-      max-width: 400px;
+      max-width: 350px;
       display: flex;
-      margin: auto 1rem;
+      margin: auto ;
       justify-content: center;
       align-items: center;
     }
@@ -658,6 +698,9 @@ img {
     padding-inline: 2rem;
     position: relative; /* For positioning pagination buttons */
   }
+  .industry h2{
+    font-size: 2rem;
+  }
   
   .industry_container {
     padding: 2rem;
@@ -667,6 +710,10 @@ img {
     -webkit-overflow-scrolling: auto; /* Revert smooth scrolling behavior */
     gap: 1.5rem; /* Spacing between cards */
     margin-bottom: 30px; /* Space for pagination buttons */
+  }
+  .industry_content h4{
+    font-size: var(--h2-font-size);
+    margin-bottom: 1rem ;
   }
   
   /* Hide scrollbar for all browsers */
@@ -810,7 +857,7 @@ img {
   }
   
   .partner h2 {
-    font-size: 5em; /* Adjust heading size */
+    font-size: var(--h1-font-size); /* Adjust heading size */
     margin-bottom: 2rem;
     color: #333; /* Adjust heading color */
   }
@@ -826,13 +873,13 @@ img {
   }
   
   .partner_content h4 {
-    font-size: 1.8em; /* Adjust subheading size */
+    font-size: var(--h1-font-size); /* Adjust subheading size */
     margin-bottom: 1rem;
     color: #555; /* Adjust subheading color */
   }
   
   .partner_content p {
-    font-size: 1.1em; /* Adjust paragraph size */
+    font-size: 1rem; /* Adjust paragraph size */
     color: #777; /* Adjust paragraph color */
     line-height: 1.7; /* Improve readability */
   }
@@ -847,7 +894,7 @@ img {
     }
   
     .partner h2 {
-      font-size: 2em;
+      font-size: 1.8rem;
       margin-bottom: 1.5rem;
     }
   
@@ -856,19 +903,19 @@ img {
     }
   
     .partner_content h4 {
-      font-size: 1.5em;
+      font-size: 1.2rem;
       margin-bottom: 0.8rem;
     }
   
     .partner_content p {
-      font-size: 1em;
+      font-size: 1rem;
     }
   }
   
   /* For medium screens (min-width: 601px and max-width: 900px) */
   @media (min-width: 601px) and (max-width: 900px) {
     .partner h2 {
-      font-size: 2.2em;
+      font-size: 2rem;
     }
   
     .partner_content {
@@ -895,11 +942,11 @@ img {
     }
   
     .partner_content h4 {
-      font-size: 1.8em;
+      font-size: 1.4rem;
     }
   
     .partner_content p {
-      font-size: 1.1em;
+      font-size: 1rem;
     }
   }
 
@@ -1002,6 +1049,9 @@ img {
   
     
   }
+  .contact h2{
+    font-size: 2rem;
+  }
   
   .contains {
     display: flex;
@@ -1019,6 +1069,7 @@ img {
     text-align: center;
     font-size: 1.2rem;
     color: white;
+    line-height: 1.6;
   }
   
   .form #contactForm {
@@ -1108,13 +1159,14 @@ img {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
   }
 
   .logo img {
     width: 100%;
     margin-inline-start: 100px;
   }
+  
 }
 
 /*=============== BREAKPOINTS ===============*/
