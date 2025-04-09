@@ -1,79 +1,92 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const chooseSection = document.querySelector('.industry');
-  const containers = document.querySelectorAll('.industry_container');
-  const container = containers[0]; // Assuming you have only one container to paginate
-  const cards = document.querySelectorAll('.industry_card'); // You might need this later for calculations
-  let numVisible = window.innerWidth < 768 ? 1 : 2;
-  let scrollAmount = window.innerWidth < 768 ? window.innerWidth : window.innerWidth / 2;
-  let isScrolling = false;
+    const chooseSection = document.querySelector('.industry');
+    const container = document.querySelector('.industry_container'); // Select the container directly
+    const cards = document.querySelectorAll('.industry_card');
+    let numVisible = window.innerWidth < 768 ? 1 : 2;
+    let isScrolling = false;
 
-  const prevButton = document.createElement('button');
-  const nextButton = document.createElement('button');
-  prevButton.classList.add('pagination-button');
-  nextButton.classList.add('pagination-button');
-  prevButton.textContent = '‹';
-  nextButton.textContent = '›';
+    const prevButton = document.createElement('button');
+    const nextButton = document.createElement('button');
+    prevButton.classList.add('pagination-button');
+    nextButton.classList.add('pagination-button');
+    prevButton.textContent = '‹';
+    nextButton.textContent = '›';
 
-  const paginationButtons = document.createElement('div');
-  paginationButtons.classList.add('pagination-buttons');
-  paginationButtons.appendChild(prevButton);
-  paginationButtons.appendChild(nextButton);
-  chooseSection.appendChild(paginationButtons);
+    const paginationButtons = document.createElement('div');
+    paginationButtons.classList.add('pagination-buttons');
+    paginationButtons.appendChild(prevButton);
+    paginationButtons.appendChild(nextButton);
+    chooseSection.appendChild(paginationButtons);
 
-  function updateButtonVisibility() {
-      if (!container) return; // Exit if container is not found
-      prevButton.disabled = container.scrollLeft <= 0 || isScrolling;
-      nextButton.disabled = container.scrollLeft >= container.scrollWidth - container.clientWidth - 1 || isScrolling;
-  }
+    function updateButtonVisibility() {
+        if (!container) return;
+        prevButton.disabled = container.scrollLeft <= 0 || isScrolling;
+        nextButton.disabled = container.scrollLeft >= container.scrollWidth - container.clientWidth - 1 || isScrolling;
+    }
 
-  function scrollLeft() {
-      if (!container || isScrolling) return;
-      isScrolling = true;
-      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      setTimeout(() => {
-          isScrolling = false;
-          updateButtonVisibility();
-      }, 300);
-  }
+    function calculateScrollAmount() {
+        if (!container || cards.length === 0) return 0;
+        const firstCardWidth = cards[0].offsetWidth;
+        const cardMarginRight = parseInt(window.getComputedStyle(cards[0]).marginRight) || 0;
+        return numVisible === 1 ? firstCardWidth + cardMarginRight : (firstCardWidth + cardMarginRight) * numVisible;
+    }
 
-  function scrollRight() {
-      if (!container || isScrolling) return;
-      isScrolling = true;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      setTimeout(() => {
-          isScrolling = false;
-          updateButtonVisibility();
-      }, 300);
-  }
+    function scrollLeft() {
+        if (!container || isScrolling) return;
+        isScrolling = true;
+        const scrollAmount = calculateScrollAmount();
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        setTimeout(() => {
+            isScrolling = false;
+            updateButtonVisibility();
+        }, 300);
+    }
 
-  if (container) {
-      container.addEventListener('scroll', () => {
-          updateButtonVisibility();
-      });
-  }
+    function scrollRight() {
+        if (!container || isScrolling) return;
+        isScrolling = true;
+        const scrollAmount = calculateScrollAmount();
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(() => {
+            isScrolling = false;
+            updateButtonVisibility();
+        }, 300);
+    }
 
-  prevButton.addEventListener('click', scrollLeft);
-  nextButton.addEventListener('click', scrollRight);
+    if (container) {
+        container.addEventListener('scroll', () => {
+            updateButtonVisibility();
+        });
+    }
 
-  function handleResize() {
-      numVisible = window.innerWidth < 768 ? 1 : 2;
-      scrollAmount = window.innerWidth < 768 ? window.innerWidth : window.innerWidth / 2;
-      updateButtonVisibility();
-  }
+    prevButton.addEventListener('click', scrollLeft);
+    nextButton.addEventListener('click', scrollRight);
 
-  window.addEventListener('resize', handleResize);
+    function handleResize() {
+        numVisible = window.innerWidth < 768 ? 1 : 2;
+        updateButtonVisibility();
+    }
 
-  updateButtonVisibility();
+    window.addEventListener('resize', handleResize);
+
+    updateButtonVisibility(); // Initial call
 });
+const sidebar = document.querySelector('.sidebar');
+const toggle = document.querySelector('.toggle');
+const content = document.querySelector('.content');
 
-const sidebarToggle = document.querySelector('.sidebar-toggle');
-const navMenu = document.querySelector('.nav__menu');
-const navClose = document.getElementById('nav-close');
+function toggleMenu() {
+    sidebar.classList.toggle('active');
+    toggle.classList.toggle('active');
+    content.classList.toggle('sidebar-open');
+}
 
-sidebarToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active'); // Toggle the active class
-});
+document.addEventListener('click', function(event) {
+    const isClickInsideSidebar = sidebar.contains(event.target);
+    const isClickInsideToggle = toggle.contains(event.target);
+    const isSidebarActive = sidebar.classList.contains('active');
 
-navClose.addEventListener('click', () => {
-    navMenu.classList.remove('active'); // Close the menu
+    if (isSidebarActive && !isClickInsideSidebar && !isClickInsideToggle) {
+        toggleMenu(); // Close the sidebar if clicked outside
+    }
 });
