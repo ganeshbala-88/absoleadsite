@@ -191,7 +191,7 @@ img {
   right: -70%; /* Initially hide more on smaller screens */
   z-index: 100;
   transition: right 0.3s ease-in-out;
-  padding: 2rem;
+  
   /* Remove default background */
 }
 
@@ -261,11 +261,7 @@ img {
 
  
 }
-@media screen and (max-width:560px){
-  .sidebar{
-    padding: 1rem;
-  }
-}
+
 
 
 
