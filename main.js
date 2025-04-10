@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nextButton.addEventListener('click', scrollRight);
 
     function handleResize() {
-        numVisible = window.innerWidth < 768 ? 1 : 2;
+        numVisible = window.innerWidth < 768 ? 1 : 1;
         updateButtonVisibility();
     }
 
