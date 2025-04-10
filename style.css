@@ -716,7 +716,7 @@ img {
   }
   
   .industry_container {
-    padding: 2rem;
+    padding: 1.8rem;
     display: flex;
     overflow-x: hidden; /* Hide horizontal scrollbar */
     scroll-snap-type: none; /* Remove scroll snapping */
@@ -742,14 +742,14 @@ img {
   .industry_card {
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: flex-start; /* Align content to the top */
     flex-shrink: 0; /* Prevent cards from shrinking */
     width: 50%; /* Adjust for desired visible width */
     height: 20rem;
     scroll-snap-align: start; /* Keep this for potential JS-based snapping */
-    padding: 1.5rem;
+    padding: 1.2rem;
     box-sizing: border-box;
     position: relative; /* Needed for absolute positioning of content */
     overflow: hidden; /* Clip any background image overflow */
@@ -789,12 +789,12 @@ img {
   }
   
   .industry_content h1 {
-    font-size: 1.5em;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
   
   .industry_content p {
-    font-size: 1em;
+    font-size: 0.8rem;
     line-height: 1.6;
   }
   
@@ -802,8 +802,8 @@ img {
   .pagination-buttons {
     position: absolute;
     top: 50%;
-    left: 10px;
-    right: 10px;
+    left: 20px;
+    right: 20px;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
@@ -811,7 +811,7 @@ img {
   }
   
   .pagination-button {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -837,6 +837,7 @@ img {
       align-items: center;
       text-align: center;
       width: 90%;
+      
     }
   
     .industry_content {
@@ -1003,6 +1004,14 @@ img {
   .hero .image{
     height: 60vh;
   }
+  .logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .nav__logo{
+    font-size: 1.2rem;
+  }
   
   .home{
     
@@ -1039,6 +1048,7 @@ img {
   .hero .image{
     height: 60vh;
   }
+  
   
   .home{
     

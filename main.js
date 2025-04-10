@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculateScrollAmount() {
         if (!container || cards.length === 0) return 0;
-        const firstCardWidth = cards[0].offsetWidth+20;
+        const firstCardWidth = cards[0].offsetWidth+25;
         const cardMarginRight = parseInt(window.getComputedStyle(cards[0]).marginRight) || 0;
         return numVisible === 1 ? firstCardWidth + cardMarginRight : (firstCardWidth + cardMarginRight) * numVisible;
     }
