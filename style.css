@@ -402,13 +402,15 @@ img {
   border: none;
   border-radius: 5px;
   font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block; /* Important for width adjustments */
 }
 
 .hire-button:hover {
-  background-color: hsl(0, 0%, 15%);
+  background-color: hsl(0, 33%, 2%);
 }
 
 .hire-button a {
@@ -461,7 +463,7 @@ img {
 
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  color: black;
   /* Default text color, adjust as needed */
   z-index: 1;
   /* Ensure the text is above the video */
@@ -482,19 +484,23 @@ img {
   letter-spacing: 2px;
   font-weight: 600;
   /* Add some space below the heading */
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 08);
   /* Optional: Add a text shadow for better visibility */
 }
 
 /* Style for the paragraph (<p>) */
 .hero-content p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   /* Default for larger screens */
   line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: 1px;
   /* Improve readability */
   margin-bottom: 2rem;
   /* Add some space below the paragraph */
  color: white;
+ text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
+
   /* Optional: Add a text shadow */
 }
 
