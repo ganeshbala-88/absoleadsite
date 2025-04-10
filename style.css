@@ -771,7 +771,7 @@ img {
     padding: 1rem;
   
     /* Optional: Add a background overlay for better text readability */
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     border-radius: 8px; /* Match card border radius */
   }
   

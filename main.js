@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const chooseSection = document.querySelector('.industry');
     const container = document.querySelector('.industry_container'); // Select the container directly
     const cards = document.querySelectorAll('.industry_card');
-    let numVisible = window.innerWidth < 768 ? 1 : 2;
+    let numVisible = window.innerWidth < 820 ? 1 : 1;
     let isScrolling = false;
 
     const prevButton = document.createElement('button');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculateScrollAmount() {
         if (!container || cards.length === 0) return 0;
-        const firstCardWidth = cards[0].offsetWidth;
+        const firstCardWidth = cards[0].offsetWidth+20;
         const cardMarginRight = parseInt(window.getComputedStyle(cards[0]).marginRight) || 0;
         return numVisible === 1 ? firstCardWidth + cardMarginRight : (firstCardWidth + cardMarginRight) * numVisible;
     }
