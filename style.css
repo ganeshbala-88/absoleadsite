@@ -395,9 +395,9 @@ img {
   padding-inline: 1rem;
 }
 .hire-button {
-  padding: 10px 20px;
-  background-color: hsl(0, 0%, 6%); /* Very dark gray/black */
-  color: white;
+  padding: 0.9rem 1.4rem;
+  background-color: white; /* Very dark gray/black */
+ 
   text-transform: capitalize;
   border: none;
   border-radius: 5px;
@@ -407,18 +407,22 @@ img {
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block; /* Important for width adjustments */
+  margin-top: 1rem;
 }
 
 .hire-button:hover {
   background-color: hsl(0, 33%, 2%);
+  color: white;
+  
 }
 
 .hire-button a {
   text-decoration: none;
-  color: white;
+  
   display: block; /* Make the anchor fill the button */
   padding: inherit; /* Inherit padding from the button */
 }
+
 
 /* Responsive adjustments for small screens */
 @media (max-width: 600px) {
@@ -466,6 +470,8 @@ img {
   color: black;
   /* Default text color, adjust as needed */
   z-index: 1;
+  background: rgba(0, 0, 0, 0.6 );
+  border-radius: 1rem;
   /* Ensure the text is above the video */
   padding: 1rem;
   /* Add some padding around the text */
@@ -484,7 +490,7 @@ img {
   letter-spacing: 2px;
   font-weight: 600;
   /* Add some space below the heading */
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 08);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
   /* Optional: Add a text shadow for better visibility */
 }
 
