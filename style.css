@@ -88,8 +88,11 @@ h1,h2{
 color: var(--first-color);
  
   
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 1.2px;
+}
+h1{
+  text-transform: capitalize;
 }
 ul {
   list-style: none;
