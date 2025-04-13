@@ -466,6 +466,7 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  opacity: 0.8;
   /* Ensure video covers the container */
 }
 
@@ -482,7 +483,7 @@ img {
 
   /* Default text color, adjust as needed */
   z-index: 1;
-  background: #222222;
+  background: #FDFAF6;
   border-radius: 1rem;
   opacity: 0.9.99;
   /* Ensure the text is above the video */
@@ -500,11 +501,11 @@ img {
   font-size: 3em;
   /* Default for larger screens */
   margin-bottom: 20px;
-  color:#ffedfa;
+  color:#0b0008;
   letter-spacing: 2px;
   font-weight: 600;
   /* Add some space below the heading */
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0);
   /* Optional: Add a text shadow for better visibility */
 }
 
@@ -518,7 +519,7 @@ img {
   /* Improve readability */
   margin-bottom: 2rem;
   /* Add some space below the paragraph */
-  color:#ffedfa;
+  color:#080006;
 
 
   /* Optional: Add a text shadow */
