@@ -76,7 +76,6 @@ button {
 }
 
 h1,
-h2,
 h3,
 h4 {
   color: var(--title-color);
@@ -84,7 +83,14 @@ h4 {
   font-weight: var(--font-medium);
   text-transform: capitalize;
 }
-
+h1,h2{
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+color: var(--first-color);
+ 
+  
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
 ul {
   list-style: none;
 }
@@ -123,7 +129,7 @@ img {
 .section__title {
   text-align: center;
   font-size: 1.8rem;
-  font-family: var(--second-font);
+
   margin-bottom: 2rem;
 }
 
@@ -465,18 +471,22 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
+  
+
 
   transform: translate(-50%, -50%);
   text-align: center;
-  color: black;
+
   /* Default text color, adjust as needed */
   z-index: 1;
-  background: rgba(0, 0, 0, 0.6 );
+  background: #222222;
   border-radius: 1rem;
+  opacity: 0.9.99;
   /* Ensure the text is above the video */
-  padding: 1rem;
+  padding: 2rem;
   /* Add some padding around the text */
   width: 80%;
+  min-height: 200px;
   /* Adjust width for smaller screens */
   max-width: 800px;
   /* Limit maximum width on larger screens */
@@ -487,11 +497,11 @@ img {
   font-size: 3em;
   /* Default for larger screens */
   margin-bottom: 20px;
-  color: white;
+  color:#ffedfa;
   letter-spacing: 2px;
   font-weight: 600;
   /* Add some space below the heading */
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
   /* Optional: Add a text shadow for better visibility */
 }
 
@@ -500,13 +510,13 @@ img {
   font-size: 1.8rem;
   /* Default for larger screens */
   line-height: 1.6;
-  font-weight: 600;
+  font-weight: 200;
   letter-spacing: 1px;
   /* Improve readability */
   margin-bottom: 2rem;
   /* Add some space below the paragraph */
- color: white;
- text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
+  color:#ffedfa;
+
 
   /* Optional: Add a text shadow */
 }
@@ -971,6 +981,7 @@ img {
   .hero .image{
     height: 60vh;
   }
+ 
   
   .home{
     
@@ -1000,6 +1011,12 @@ img {
     display: none;
   }
 }
+.hero-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 @media (max-width: 767px) {
   .hero .image{
     height: 60vh;
@@ -1012,7 +1029,12 @@ img {
   .nav__logo{
     font-size: 1.2rem;
   }
-  
+  .hero-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .home{
     
     margin-top: 3rem;
@@ -1025,7 +1047,7 @@ img {
   }
 
   .hero-content h1 {
-    font-size: 5vw;
+    font-size: 6vw;
     /* Adjust font size for smaller screens */
     margin-bottom: 10px;
   }
@@ -1047,6 +1069,12 @@ img {
 
   .hero .image{
     height: 60vh;
+  }
+  .hero-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   
@@ -1074,6 +1102,12 @@ img {
   }
   .contact h2{
     font-size: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color: var(--first-color);
+     
+      
+      text-transform: capitalize;
+      letter-spacing: 2px;
   }
   
   .contains {
