@@ -90,3 +90,16 @@ document.addEventListener('click', function(event) {
         toggleMenu(); // Close the sidebar if clicked outside
     }
 });
+const hireButton = document.querySelector(".hire-button");
+const text = "lets hire smarter";
+
+function typing(text, index = 0) {
+  if (index < text.length) {
+    hireButton.textContent += text[index];
+    setTimeout(() => {
+      typing(text, index + 1); // Call typing again for the next character
+    }, 100);
+  }
+}
+
+typing(text);
